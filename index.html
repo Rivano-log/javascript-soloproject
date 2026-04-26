@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMBD
+</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="search-overlay" id="searchOverlay">
+  <div class="search-overlay__spinner"></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav__menu">
+  <div class="nav__container">
+
+    <div class="nav__logo">
+      <img src="blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB logo">
+    </div>
+
+    <div class="nav__menu__links" id="navLinks">
+      <a href="#">Films</a>
+      <a href="#">TV Series</a>
+      <a href="#">People</a>
+      <a href="#">Awards</a>
+      <a href="#">More</a>
+    </div>
+
+    <form id="searchForm" class="nav__search">
+      <input type="text" id="searchInput" placeholder="Search movies...">
+      <button type="submit" class="search-btn">
+        <span class="btn-text">Search</span>
+        <span class="spinner"></span>
+      </button>
+    </form>
+
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+  <div class="nav__overlay" id="navOverlay"></div>
+</nav>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container header__container">
+    <h1 class="header__title">Welcome.</h1>
+
+    <h2 class="header__subtitle">
+      Millions of movies, TV series and people to explore. Discover it here.
+    </h2>
+
+    <form class="header__search">
+      <input 
+        type="text" 
+        id="headerSearchInput"
+        placeholder="Search for a movie..." 
+      />
+     <button type="submit" class="search-btn">
+  <span class="btn-text">Search</span>
+  <span class="spinner"></span>
+</button>
+    </form>
+  </div>
+</header>
+
+<!-- Trending -->
+
+<section class="trending">
+  <div class="container">
+    <div class="trending__header">
+      <h2 class="trending__title">Trending</h2>
+
+      <div class="trending__tabs">
+        <button class="trending__tab trending__tab--active">Today</button> 
+        <button class="trending__tab">This Week</button>
+      </div>
+    </div>
+
+  
+<div class="trending__movies" id="trendingMovies"></div>
+  </div>
+</section>
+
+<!-- Trailers -->
+<section class="trailers">
+  <div class="container">
+    
+    <div class="trailers__header">
+      <h2 class="trailers__title">Newest trailers</h2>
+
+      <div class="trailers__tabs">
+        <button class="trailers__tab trailers__tab--active">Popular</button>
+        <button class="trailers__tab">Streaming</button>
+        <button class="trailers__tab">On TV</button>
+        <button class="trailers__tab">To Rent</button>
+        <button class="trailers__tab">Cinema</button>
+      </div>
+    </div>
+
+    <div class="trailers__movies" id="trailerMovies"></div>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container footer__container">
+
+    <div class="footer__logo">
+      <img src="blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB logo">
+      <p>The Movie Database (TMDB) is a community built movie and TV database.</p>
+    </div>
+
+    <div class="footer__columns">
+      <div class="footer__column">
+        <h4>The Basics</h4>
+        <ul>
+          <li><a href="#">About TMDB</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Support Forums</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#">Contribution Bible</a></li>
+          <li><a href="#">Add New Movie</a></li>
+          <li><a href="#">Add New TV Show</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Guidelines</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Leaderboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">DMCA Policy</a></li>
+        </ul>
+      </div>
+    </div> 
+    <div class="footer__newsletter">
+      <h4 class="footer__newsletter__title">Newsletter</h4>
+      <div class="footer__newsletter__form">
+        <input type="email" id="newsletterInput" placeholder="Your email address">
+        <button class="footer__button" id="newsletterBtn" type="button">
+          <span class="footer__btn-text">Send</span>
+          <span class="footer__spinner"></span>
+        </button>
+      </div>
+    </div>
+
+  </div> 
+
+  <div class="footer__bottom">
+    <p>© 2026 TMDB. All rights reserved. Designed by <strong>Rivano&nbsp;Imanuel</strong></p>
+  </div>
+
+</footer>
