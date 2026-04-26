@@ -10,7 +10,11 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -126,8 +130,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 999; /* onder het menu (1000), boven de rest */
-}
+  z-index: 999; }
 
 .nav__overlay.open {
   opacity: 1;
@@ -137,7 +140,6 @@ body {
 
 /* ─── HAMBURGER ───────────────────────────────── */
 
-/* HAMBURGER - standaard verborgen op desktop */
 .nav__hamburger {
   display: none;
   position: relative;
@@ -507,8 +509,7 @@ body {
 }
 .footer__column {
   flex: 1;
-  min-width: 0;       /* voorkomt overflow als content lang is */
-}
+  min-width: 0;       }
 
 .footer__column h4 {
   font-size: 14px;
@@ -645,7 +646,7 @@ body {
   flex: 0 0 280px;
 }
 
-/* op 1100px en kleiner: newsletter eronder, volle breedte */
+
 @media (max-width: 1100px) {
   .footer__newsletter {
     flex: 0 0 100%;
@@ -663,7 +664,7 @@ body {
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 100%;     /* belangrijk! */
+    max-width: 100%;     
     padding: 0 20px;
   }
 }
@@ -954,19 +955,19 @@ body {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;     /* optioneel: snap naar elke card */
-  scrollbar-width: none;             /* Firefox */
-  -ms-overflow-style: none;          /* IE/Edge */
+  scroll-snap-type: x mandatory;     
+  scrollbar-width: none;             
+  -ms-overflow-style: none;          
 }
 
 .trailers__movies::-webkit-scrollbar {
-  display: none;                     /* Chrome/Safari */
+  display: none;                     
 }
 
 
 .trailers__movies > * {
   flex-shrink: 0;
-  scroll-snap-align: start;          /* werkt met scroll-snap-type hierboven */
+  scroll-snap-align: start;          
 }
 .trailers__tabs {
   max-width: 100%;
@@ -990,5 +991,50 @@ body {
 
   .header__subtitle {
     font-size: 14px;
+  }
+}
+
+
+/* debug */
+@media (max-width: 768px) {
+  .trailers__tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 8px;
+    padding: 6px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;  
+    
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .trailers__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trailers__tabs button,
+  .trailers__tabs a {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 13px;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;  
+  }
+}
+
+
+@media (max-width: 480px) {
+  .trailers__tabs {
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .trailers__tabs button,
+  .trailers__tabs a {
+    padding: 7px 14px;
+    font-size: 12px;
   }
 }
